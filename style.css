@@ -1,0 +1,575 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+   }
+  /*Global color */
+  :root{
+    --main-color: black;
+    --text-color: black; 
+    --background-color:#808080 ; 
+      
+  } 
+  /*custom scroll bar */
+  html::-webkit-scrollbar{
+    width:0.5rem;
+    background-color: var(--main-color);
+   }
+   html::-webkit-scrollbar-thumb{
+    background:white ;
+    border-radius: 5rem;
+   }
+   html::-webkit-scrollbar-thumb:hover{
+    background-color: bisque;
+   }
+  
+    /*custom scroll bar end */
+  body{
+    background-color: var(--background-color);
+    
+  }
+  /*nav bar style start  */
+  .heading{
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index:10;
+    display:flex;
+    justify-content:space-between;
+    padding:10px 100px;
+    border-bottom: 1px solid #add8e6;
+    background-color: var(--main-color);
+  }
+  .name{
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 4px 6px 8px chocolate;
+    color:white;
+  }
+  .heading .name .bx{
+    font-size: 1.5rem;
+    padding-right: 6px;
+  }
+  .heading .nav-bar{
+    display: flex;
+    align-items: center;
+    
+  }
+  .heading .nav-bar li{
+    margin-right: 2rem;
+    transition: 0.6s;
+    text-shadow: 4px 4px 8px chocolate;
+  }
+  .heading .nav-bar li a{
+    font-size: 19px;
+    font-weight: 500;
+    color: white;   
+  }
+  .nav-bar li a::after{
+    content: '';
+    width:0%;
+    height:3px;
+   background-color: blue;
+    left: 0;
+    bottom: -3px;
+    display: block;
+    transition: 0.5s;
+  }
+  li a:hover::after,  li a.active::after{
+    width:100%;
+    color: red;
+     transition: 0.5s;
+  }
+
+  .heading .search{
+    font-size: 12px;
+    box-shadow:4px 4px 8px #43c6db ;
+    background-color: gainsboro;
+    float: right;
+  padding: 5px;
+    border-radius:5px;
+  }
+  
+  .heading .signInbtn{
+    background-color: #616161;
+    padding: 8px 12px;
+    border: 1px solid white ;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight:600;
+  }
+  .heading .signInbtn:hover{
+   
+    filter: brightness(1.4);
+    transform: scale(1.2);
+      color: red;
+ }
+ /*nav bar style end  */
+
+ /*homecover page start*/
+ .homecover-image .bg-image{
+    width: 100%;
+    min-height: 640px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.homecover-image .bg-image img{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.7;
+}
+.homecover-image .bg-image-text{
+    padding-left: 150px;
+}
+.homecover-image .bg-image-text h1{
+    color: var(--text-color);
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-shadow:2px 2px 5px #add8e6;
+    }
+  
+    .homecover-image .bg-image-text .click{
+      font-size: 22px;
+      color: pink;
+      font-weight: 500;
+      text-shadow: 2px 2px 2px grey;
+       }
+       .homecover-image .bg-image-text  .bx{
+        color: gray;
+        font-size: 1.7rem;
+        background-color: aquamarine;
+        border-radius: 50%;
+        padding: 8px;
+        border: 3px solid rgb(2, 3, 7, 0.5);
+       margin-left: 30px;
+               }
+   .homecover-image .bg-image-text .bx:hover{
+        transform: scale(1.2);
+        filter: brightness(1.2);
+    }
+    /*homecover page end*/
+
+
+    /*movie section style start*/
+    .movie-container .label{
+        width: 965px;
+        color: var(--text-color);
+        font-size: 1.8rem;
+        font-weight: 800;
+        text-transform: uppercase;
+       margin: 65px auto 5px auto;
+        border-bottom:1.4px solid brown;
+        padding-left: 10px;
+        border-left:2.5px solid blue;
+    }
+    .movie-container .header{
+      width: 965px;
+      color: var(--text-color);
+      position: relative;     
+       font-size: 1.8rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin: 65px auto 5px auto;
+        border-bottom:1.4px solid brown;
+        padding-left: 10px;
+        border-left:2.5px solid blue ;
+    }
+    .movie-container .movie-box{
+        max-width: 960px;
+        margin: 1.4rem auto 5px auto;
+        display: grid;
+        grid-template-columns:repeat(auto-fit, minmax(180px,auto)) ;
+        gap: 2rem;
+    }
+   
+    .movie-box .movie-image{
+      margin-top: 1rem;
+        width: 100%;
+        height: 300px;
+    }
+    .movie-box .movie-image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .movie-container .movie-info{
+      line-height: 28px;
+    }
+    .movie-box .movie-image:hover{
+        transform: translateY(-15px) scale(1.1);
+        filter: brightness(1.2);
+    }
+    .movie-info h3{
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-top: 10px;
+      color: var(--text-color);
+    }
+   
+    .movie-box h5{
+      color: brown;
+      font-size: 18px;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    .movie-info .rating span {
+      font-size: 18px;
+      color: yellowgreen;
+    }
+  
+  /*movie section style end*/
+
+  /*footer start*/
+  .footer{
+    display: flex;
+    margin-top:16px;
+   justify-content: center;  
+  }
+   .social-app h2{
+     font-size: 24px;
+     font-weight: 700;
+     color: white;     
+      padding: 5px;
+      text-decoration: underline;
+     text-shadow: 2px 2px 5px black;
+  }
+   .social-app{
+        margin-left: 3rem;
+     text-align: center;    
+      
+  }
+   .social-app a{
+    color:#616161;
+    margin-bottom: 50px;
+  }
+   .social-app i{
+    font-size: 1.3rem;
+    background-color: burlywood;
+    border: 1px solid #a13941ff;
+    border-radius:20%;
+    box-shadow:2px 2px 4px gray ;
+    padding:5px ;
+    margin-top:10px;
+    margin-right: 1.2rem;
+      filter: brightness(0.8);
+  transition: 0.5s;
+  }
+   .social-app i:hover{
+    filter: brightness(1.1);
+    transform: scale(1.3);
+  }
+  .sentence{
+    background-color:black  ;
+    width: 100%;
+    color:white;
+    text-shadow:1px 1px 4px gray;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    padding-top:10px;
+     padding-bottom:10px;
+     margin-top: 15px;
+  }
+  /* footer end */
+
+  /*responsive start */
+ @media (max-width:1011px){
+    .heading .name{
+      font-size: 19px;
+      font-weight: 500;
+    }
+    .heading .nav-bar a{
+      font-size: 16px;     
+    }
+    .heading .signInbtn{
+           font-size: 14px;
+    }
+    .movie-container .header{
+      margin-top: 70px;
+    }
+  }
+
+  @media (max-width:985px){
+    .heading{
+      width:960px;
+    }
+    .homecover-image .bg-image img{
+      width: 960px;
+    }
+    .homecover-image .bg-image-text h1{
+      color: var(--text-color);
+      font-size: 2.4rem;
+      color: red;
+      font-weight: 600;
+      }
+      .homecover-image .bg-image-text .click{
+        font-size: 20px;
+        color: blue;
+        font-weight: 800;
+         }
+         .homecover-image .bg-image-text  .bx{
+          font-size: 1.4rem;        
+                 }
+    .movie-container .label{
+      margin-left: 1.5rem;
+      width:945px;
+    }
+    .movie-container .header{
+      margin-left: 1.5rem;
+    }
+    .movie-container .movie-info{
+    margin-left: 15px;
+   
+    }
+    .movie-container .movie-info h3{
+      font-size: 18px;
+    }
+    .movie-container .movie-info span{
+      font-size: 16px;
+    }
+  }
+  @media (max-width:946px){
+     .heading{
+      width:925px;
+    }
+    .movie-container .label{
+      width:940px;
+    }
+    .movie-container .heading{
+      width:940px;
+    }
+    .homecover-image .bg-image{
+      width:100%;
+    }
+    .homecover-image .bg-image img{
+      width:100%;
+    }
+    .movie-container .movie-box{
+      max-width: 100%;
+      margin: 1.4rem auto 5px auto;
+      gap: 1rem;
+  }
+  }
+
+  @media (max-width:842px){
+     .heading{
+      width:822px;
+    }
+     .heading .search{
+      display: none;
+    }
+    .movie-container .label{
+      font-size: 1.4rem;
+      width:830px;
+    }
+    .movie-info h3, h5{
+      text-shadow: 3px 3px 3px palegoldenrod;
+    }
+    .movie-container .heading{
+       font-size: 1.4rem;
+      width:830px;
+    }
+    .homecover-image .bg-image{
+      width:100%;
+    }
+    .homecover-image .bg-image img{
+      width:100%;
+    }
+    .movie-container .movie-box{
+      max-width: 100%;
+      margin: 1.2rem auto 5px auto;
+      gap: 1rem;
+  }
+  
+  }
+
+  @media (max-width:792px){
+    .heading{
+      width:100%;
+    }
+   
+    .heading .nav-bar li{
+      margin-right: 1rem;
+    }
+  .homecover-image .bg-image img{
+    width:792px;
+  }
+  .homecover-image .bg-image-text h1{
+    font-size: 2rem;
+    color: rgb(233, 123, 217);
+    font-weight: 600;
+    }
+    .homecover-image .bg-image-text .click{
+      font-size: 18px;
+      color: black ;
+      font-weight: 700;
+       }
+       .homecover-image .bg-image-text  .bx{
+        font-size: 1.2rem;        
+               }
+  .movie-container .label{
+
+    margin-left: 1.5rem;
+    width:775px;
+  }
+  .movie-container .header{
+    margin-left: 1.2rem;
+  }
+  .movie-container .movie-info{
+  margin-left: 15px;
+ 
+  }
+  .movie-container .movie-info h3{
+    text-transform: capitalize;
+    font-size: 18px;
+  }
+  .movie-container .movie-info span{
+    font-size: 14px;
+  }
+  
+  .movie-container .movie-box{
+    margin: 1.2rem 20px 5px 10px;
+    gap: 0.8rem;
+}
+  }
+   @media (max-width:706px){
+     .heading{
+      width:690px;
+      padding:10px 70px;
+    }
+     .movie-container .header, .movie-container .label{
+      width:675px;
+    }
+    .homecover-image .bg-image img{
+      width:690px;
+      align-self: center;
+    }
+    .homecover-image .bg-image-text{
+      padding-left: 90px;
+  }    
+    .heading .name{
+      font-size: 17px;
+      font-weight: 500;
+    }
+    .heading .nav-bar a{
+      font-size: 14px;     
+    }
+    .heading .signInbtn{
+      float: left;
+    }
+    .movie-box .movie-info h5{
+      font-size: 16px;
+    }
+    .sentence{
+      font-size: 17px;
+    font-weight: 600;
+    }
+   }
+ @media (max-width:596px){
+   .heading{
+      width:580px;
+      padding:10px 60px;
+    }
+
+    .heading .name{
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .heading .name .bx{
+      font-size: 1.2rem;
+    }
+    .heading .signInbtn{
+      display: none;
+    }
+  .homecover-image .bg-image{
+       display: none;
+    }
+   .movie-container .header, .movie-container .label{
+      width:580px;
+    }
+    .social-app h2{
+      font-size: 20px;
+      font-weight: 600;      
+   }
+   
+    .social-app i{
+     font-size: 0.8rem;
+    }
+    .sentence{
+      font-size: 15px;
+    font-weight: 600;
+    }
+     .movie-box h5{
+      color: violet;
+      font-size: 18px;
+      text-decoration: underline;
+      font-weight: 600;
+      text-shadow: none;
+    }
+  
+     .movie-info .rating span{
+        color:orange;
+      } 
+   }
+
+   @media (max-width:500px){
+    .heading{
+       width:480px;
+       padding:10px 30px;
+     }
+ 
+     .heading .name{
+       font-size: 16px;
+           }
+    .movie-container .header, .movie-container .label{
+       width:480px;
+       font-size:1.2rem;
+       font-weight: 800;
+       text-shadow: 3px 3px 5px palegoldenrod;
+       padding-bottom: 8px;
+    }   
+    }
+    @media (max-width:414px){
+      .heading{
+         width:400px;
+         padding:10px 15px;
+       }   
+       
+       .heading .nav-bar li a{
+              font-size: 13px;
+             }
+      .movie-container .header, .movie-container .label{
+         width:400px;
+         font-size:1rem;
+         font-weight: 800;   
+         margin-top: 5.5rem;   
+         margin-left: 14px;
+      }
+   
+    .movie-box .movie-image{
+      margin-top: 2rem;
+          }
+          .movie-info h3 {
+            text-transform: uppercase;
+          }        
+      .sentence{
+        font-size: 13px;
+      font-weight: 500;
+      }
+      }
+   /*responsive end */
+ 
